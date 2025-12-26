@@ -1,225 +1,333 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitarras Mais Famosas do Mundo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guitarras Clássicas • História e Estilo</title>
 
-    <style>
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
-            color: #eaeaea;
-            line-height: 1.7;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* HEADER */
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, #111, #000);
-            border-bottom: 3px solid #c89b3c;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f0f0f;
+    color: #eaeaea;
+    line-height: 1.7;
+}
 
-        header h1 {
-            font-size: 3rem;
-            color: #c89b3c;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
+/* HEADER COM IMAGEM */
+header {
+    position: relative;
+    padding: 130px 20px;
+    text-align: center;
+    background-image: url("images/guitarras.jpg");
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #2a2a2a;
+}
 
-        header p {
-            margin-top: 15px;
-            font-size: 1.2rem;
-            color: #bbb;
-        }
+header {
+    background-attachment: fixed;
+}
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+}
 
-        /* MAIN */
-        main {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
+header h1,
+header p {
+    position: relative;
+    z-index: 1;
+}
 
-        /* SECTIONS */
-        section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            background: linear-gradient(145deg, #1b1b1b, #121212);
-            margin-bottom: 80px;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 25px 40px rgba(0,0,0,0.6);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #d4af37;
+    text-shadow: 0 4px 25px rgba(0,0,0,.8);
+}
 
-        section:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 35px 55px rgba(0,0,0,0.8);
-        }
+header p {
+    max-width: 760px;
+    margin: 20px auto 0;
+    color: #d0d0d0;
+    font-size: 1.1rem;
+}
 
-        section img {
-            width: 100%;
-            height: 100%;
-            min-height: 420px;
-            object-fit: cover;
-        }
+/* MAIN */
+main {
+    max-width: 1200px;
+    margin: 90px auto;
+    padding: 0 20px;
+}
 
-        .content {
-            padding: 40px;
-        }
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: #d4af37;
+    margin-bottom: 70px;
+    text-align: center;
+}
 
-        .content h2 {
-            font-size: 2.4rem;
-            color: #c89b3c;
-            margin-bottom: 20px;
-        }
+/* CARD */
+.guitar {
+    background-color: #161616;
+    border-radius: 14px;
+    margin-bottom: 90px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+    transition: .4s ease;
+}
 
-        .content p {
-            color: #d2d2d2;
-            margin-bottom: 20px;
-        }
+.guitar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.7);
+}
 
-        .content h3 {
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            color: #f0f0f0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.guitar-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
-        ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
+.guitar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        li {
-            margin-bottom: 8px;
-            color: #cfcfcf;
-        }
+.guitar-info {
+    padding: 45px;
+}
 
-        /* FOOTER */
-        footer {
-            background: #000;
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 2px solid #c89b3c;
-        }
+.guitar-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
 
-        footer p {
-            color: #aaa;
-            font-size: 0.95rem;
-        }
+.guitar-info p {
+    color: #d0d0d0;
+}
 
-        footer span {
-            color: #c89b3c;
-            font-weight: bold;
-        }
+/* TAGS */
+.tags {
+    margin-top: 25px;
+}
 
-        /* RESPONSIVO */
-        @media (max-width: 900px) {
-            section {
-                grid-template-columns: 1fr;
-            }
+.tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #d4af37;
+    border-radius: 30px;
+    font-size: .9rem;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #d4af37;
+}
 
-            section img {
-                min-height: 260px;
-            }
+/* TIMELINE */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
 
-            header h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+.time {
+    text-align: center;
+    font-size: .9rem;
+}
+
+.time span {
+    display: block;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+/* DETAILS */
+details {
+    border-top: 1px solid #2a2a2a;
+    padding: 30px 45px;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: 500;
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details p {
+    margin-top: 15px;
+    color: #cfcfcf;
+}
+
+/* ARTISTAS */
+.artists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.artist {
+    background-color: #1e1e1e;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: .9rem;
+    border: 1px solid #333;
+}
+
+/* FOOTER */
+footer {
+    background-color: #0a0a0a;
+    padding: 30px;
+    text-align: center;
+    font-size: .9rem;
+    color: #aaa;
+    border-top: 1px solid #2a2a2a;
+}
+
+footer span {
+    color: #d4af37;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .guitar-top {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>As 3 Guitarras Mais Famosas do Mundo</h1>
-    <p>História, características e estilos musicais</p>
+    <h1>As Guitarras Mais Famosas do Mundo</h1>
+    <p>Modelos que definiram gerações e estilos musicais</p>
 </header>
 
 <main>
 
-    <!-- STRATOCASTER -->
-    <section>
-        <img src="images/stratocaster.jpg" alt="Fender Stratocaster">
-        <div class="content">
+<h2 class="section-title">Modelos Icônicos</h2>
+
+<!-- STRATO -->
+<section class="guitar">
+    <div class="guitar-top">
+        <img src="images/stratocaster.jpg">
+        <div class="guitar-info">
             <h2>Fender Stratocaster</h2>
-            <p>
-                A Fender Stratocaster é uma das guitarras elétricas mais icônicas e influentes da história da música. Lançada em 1954, ela se destacou desde o início pelo design inovador, com corpo sólido contornado, que oferece grande conforto ao tocar, especialmente em comparação com outros modelos da época. Normalmente construída em alder ou ash, a Stratocaster possui braço parafusado de maple, podendo ter escala em maple ou rosewood, o que contribui para seu timbre característico e para a sensação de tocabilidade.
-            </p>
-
-            <h3>Estilos Indicados</h3>
-            <ul>
-                <li>Rock</li>
-                <li>Blues</li>
-                <li>Pop</li>
-                <li>Funk</li>
-            </ul>
-
-            <h3>Artistas Famosos</h3>
-            <p>Jimi Hendrix, Eric Clapton, John Mayer, Stevie Ray Vaughan</p>
+            <p>A Fender Stratocaster é uma das guitarras elétricas mais icônicas e influentes da história da música. Lançada em 1954, ela se destacou desde o início pelo design inovador, com corpo sólido contornado, que oferece grande conforto ao tocar, especialmente em comparação com outros modelos da época. Normalmente construída em alder ou ash, a Stratocaster possui braço parafusado de maple, podendo ter escala em maple ou rosewood, o que contribui para seu timbre característico e para a sensação de tocabilidade.</p>
+            <div class="tags">
+                <span class="tag">Rock</span>
+                <span class="tag">Blues</span>
+                <span class="tag">Funk</span>
+            </div>
+            <div class="timeline">
+                <div class="time"><span>1954</span>Lançamento</div>
+                <div class="time"><span>60s</span>Popularização</div>
+                <div class="time"><span>Hoje</span>Clássico</div>
+            </div>
         </div>
-    </section>
+    </div>
+    <details>
+        <summary>Mais detalhes</summary>
+        <p>Três captadores single-coil e timbres limpos icônicos.</p>
+        <div class="artists">
+            <span class="artist">Jimi Hendrix</span>
+            <span class="artist">Eric Clapton</span>
+            <span class="artist">Stevie Ray Vaughan</span>
+            <span class="artist">John Mayer</span>
+        </div>
+    </details>
+</section>
 
-    <!-- LES PAUL -->
-    <section>
-        <img src="images/lespaul.jpg" alt="Gibson Les Paul">
-        <div class="content">
+<!-- LES PAUL -->
+<section class="guitar">
+    <div class="guitar-top">
+        <img src="images/lespaul.jpg">
+        <div class="guitar-info">
             <h2>Gibson Les Paul</h2>
-            <p>
-                 A Gibson Les Paul surgiu no início dos anos 1950 em parceria com o guitarrista Les Paul. É conhecida por seu som encorpado, sustain longo e visual clássico. A Les Paul é uma guitarra elétrica clássica, conhecida pelo corpo sólido mais pesado, braço colado e timbre encorpado com muito sustain. Geralmente equipada com dois captadores humbucker e ponte fixa, oferece som quente, potente e com pouco ruído, sendo muito usada no rock, hard rock e metal. É valorizada pela estabilidade de afinação, simplicidade e força sonora.
-            </p>
-
-            <h3>Estilos Indicados</h3>
-            <ul>
-                <li>Rock</li>
-                <li>Hard Rock</li>
-                <li>Blues</li>
-                <li>Metal Clássico</li>
-            </ul>
-
-            <h3>Artistas Famosos</h3>
-            <p>Slash, Jimmy Page, Zakk Wylde, Gary Moore</p>
+            <p>A Gibson Les Paul surgiu no início dos anos 1950 em parceria com o guitarrista Les Paul. É conhecida por seu som encorpado, sustain longo e visual clássico. A Les Paul é uma guitarra elétrica clássica, conhecida pelo corpo sólido mais pesado, braço colado e timbre encorpado com muito sustain. Geralmente equipada com dois captadores humbucker e ponte fixa, oferece som quente, potente e com pouco ruído, sendo muito usada no rock, hard rock e metal. É valorizada pela estabilidade de afinação, simplicidade e força sonora.</p>
+            <div class="tags">
+                <span class="tag">Rock</span>
+                <span class="tag">Hard Rock</span>
+                <span class="tag">Blues</span>
+            </div>
+            <div class="timeline">
+                <div class="time"><span>1952</span>Lançamento</div>
+                <div class="time"><span>70s</span>Clássico</div>
+                <div class="time"><span>Hoje</span>Referência</div>
+            </div>
         </div>
-    </section>
+    </div>
+    <details>
+        <summary>Mais detalhes</summary>
+        <p>Captadores humbucker e corpo em mogno garantem potência.</p>
+        <div class="artists">
+            <span class="artist">Slash</span>
+            <span class="artist">Jimmy Page</span>
+            <span class="artist">Gary Moore</span>
+            <span class="artist">Zakk Wylde</span>
+        </div>
+    </details>
+</section>
 
-    <!-- SG -->
-    <section>
-        <img src="images/SG.jpg" alt="Gibson SG">
-        <div class="content">
+<!-- SG -->
+<section class="guitar">
+    <div class="guitar-top">
+        <img src="images/sg.jpg">
+        <div class="guitar-info">
             <h2>Gibson SG</h2>
-            <p>
-                Lançada em 1961, a Gibson SG ficou famosa pelo corpo fino, acesso facilitado às casas mais agudas e timbre agressivo. A Gibson SG é uma guitarra elétrica que se destacou por seu corpo fino e leve em mogno, oferecendo grande conforto e excelente acesso às casas mais agudas graças aos recortes profundos. Possui braço colado, que garante bom sustain, dois captadores humbucker, controles individuais de volume e tonalidade e chave seletora de três posições, resultando em um timbre encorpado, porém mais aberto, brilhante e agressivo que o da Les Paul, com médios bem definidos que se destacam na mix.
-            </p>
-
-            <h3>Estilos Indicados</h3>
-            <ul>
-                <li>Rock</li>
-                <li>Hard Rock</li>
-                <li>Heavy Metal</li>
-            </ul>
-
-            <h3>Artistas Famosos</h3>
-            <p>Angus Young, Tony Iommi, Derek Trucks</p>
+            <p>Lançada em 1961, a Gibson SG ficou famosa pelo corpo fino, acesso facilitado às casas mais agudas e timbre agressivo. A Gibson SG é uma guitarra elétrica que se destacou por seu corpo fino e leve em mogno, oferecendo grande conforto e excelente acesso às casas mais agudas graças aos recortes profundos. Possui braço colado, que garante bom sustain, dois captadores humbucker, controles individuais de volume e tonalidade e chave seletora de três posições, resultando em um timbre encorpado, porém mais aberto, brilhante e agressivo que o da Les Paul, com médios bem definidos que se destacam na mix.</p>
+            <div class="tags">
+                <span class="tag">Rock</span>
+                <span class="tag">Hard Rock</span>
+                <span class="tag">Metal</span>
+            </div>
+            <div class="timeline">
+                <div class="time"><span>1961</span>Lançamento</div>
+                <div class="time"><span>70s</span>Popularização</div>
+                <div class="time"><span>Hoje</span>Ícone</div>
+            </div>
         </div>
-    </section>
+    </div>
+    <details>
+        <summary>Mais detalhes</summary>
+        <p>Corpo fino e timbre agressivo com médios destacados.</p>
+        <div class="artists">
+            <span class="artist">Angus Young</span>
+            <span class="artist">Tony Iommi</span>
+            <span class="artist">Derek Trucks</span>
+        </div>
+    </details>
+</section>
 
 </main>
 
 <footer>
-    <p>Site desenvolvido por <span> Leonardo Olivieri </span> • HTML & CSS</p>
+    <p>Site desenvolvido por <span>Leonardo Olivieri</span> • HTML & CSS</p>
 </footer>
 
 </body>
